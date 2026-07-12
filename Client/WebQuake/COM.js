@@ -298,7 +298,7 @@ COM.LoadPackFile = function(packfile)
 {
 	var xhr = new XMLHttpRequest();
 	xhr.overrideMimeType('text/plain; charset=x-user-defined');
-	xhr.open('GET', packfile, false);
+	xhr.open('GET', 'https://cdn.seucra.tech/' + packfile, false);
 	xhr.setRequestHeader('Range', 'bytes=0-11');
 	xhr.send();
 	if ((xhr.status <= 199) || (xhr.status >= 300) || (xhr.responseText.length !== 12))
@@ -314,7 +314,7 @@ COM.LoadPackFile = function(packfile)
 	var pack = [];
 	if (numpackfiles !== 0)
 	{
-		xhr.open('GET', packfile, false);
+		xhr.open('GET', 'https://cdn.seucra.tech/' + packfile, false);
 		xhr.setRequestHeader('Range', 'bytes=' + dirofs + '-' + (dirofs + dirlen - 1));
 		xhr.send();
 		if ((xhr.status <= 199) || (xhr.status >= 300) || (xhr.responseText.length !== dirlen))
