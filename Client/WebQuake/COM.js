@@ -253,7 +253,7 @@ COM.LoadFile = function(filename)
 					Draw.EndDisc();
 					return new ArrayBuffer(0);
 				}
-				xhr.open('GET', search.filename + '/pak' + j + '.pak', false);
+				xhr.open('GET', 'https://cdn.seucra.tech/' + search.filename + '/pak' + j + '.pak', false);
 				xhr.setRequestHeader('Range', 'bytes=' + file.filepos + '-' + (file.filepos + file.filelen - 1));
 				xhr.send();
 				if ((xhr.status >= 200) && (xhr.status <= 299) && (xhr.responseText.length === file.filelen))
